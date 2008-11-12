@@ -1,0 +1,649 @@
+2003-12-05  Ulf Betlehem  <flu@iki.fi>
+
+	*** 1.49 released ***
+
+	* README, cplay.1: - document restricted mode
+
+2003-11-08  Ulf Betlehem  <flu@iki.fi>
+
+	*** 1.49pre4 ***
+
+	* cplay:
+	- restricted mode (suggested by Yoann AUBINEAU)
+	- connect player stdin to a pipe
+	- removed sleep(1) if player exec failed
+	- combined pause/unpause -> toggle_pause
+	- no parse_buf() if stopped or seeking
+	- removed --no-tty-control from madplay (stdin no longer tty)
+	- reduced codesize
+
+2003-11-06  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay:
+	- use 'm' for bookmarking instead of 'b'
+	- minor code clean-up
+	- modified help page
+
+2003-11-02  Ulf Betlehem  <flu@iki.fi>
+
+	*** 1.49pre3 ***
+
+	* cplay.list:
+	- ESP Package Manager support (http://www.easysw.com/epm/)
+
+	* cplay:
+	- removed excessive update() from get_bookmark()
+	- rewritten delete and move commands for speed
+
+2003-11-01  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay:
+	- move active status support from ListEntry to PlaylistEntry
+
+2003-10-04  Ulf Betlehem  <flu@iki.fi>
+
+	* cplayrc:
+	- removed execute permissions
+
+2003-10-01  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay:
+	- possible bugfix for increasing CPU usage
+
+2003-10-01  Ulf Betlehem  <flu@iki.fi>
+
+	*** 1.49pre2 ***
+	
+	* cplay:
+	- possible bugfix for increasing CPU usage
+
+2003-09-28  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay:
+	- use curses.KEY_ENTER for xwsh (wave++)
+
+2003-09-13  Ulf Betlehem  <flu@iki.fi>
+
+	*** 1.49pre1 ***
+	
+	* cplay:
+	- support and prefer ossaudiodev (dorphell)
+
+2003-09-01  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay:
+	- fixed playlist identification for 1.48 (Jean-Nicolas Kuttler)
+
+2003-08-28  Ulf Betlehem  <flu@iki.fi>
+
+	* Makefile:
+	- cplayrc generation
+
+	* cplay.1:
+	- execute both /etc/cplayrc and ~/.cplayrc
+	- ignore /etc/cplayrc if ~/.cplayrc exists
+	- speex
+	- xmp
+
+	* README:
+	- speex
+	- ~/.cplayrc
+
+2003-08-26  Ulf Betlehem  <flu@iki.fi>
+
+	*** 1.48 released ***
+
+	* cplay:
+	- xmp regexp (Yuri D'Elia)
+	- URL support in mpg123 regexp (Martin Michlmayr)
+	- rudimentary /etc/cplayrc support (Toni Timonen)
+
+	* cplay.1:
+	- xmp, play and cplayrc references
+
+	* cplayrc:
+	- new file
+
+2003-08-20  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay(1.48pre1):
+	- discontinue python1.5 support
+	- mixer/volume control using python-oss module
+	- horizontal scrolling with < and >
+	- show tail (was head) of long input lines
+	- import random instead of whrandom
+	- minor progress parsing modification
+	- NoOffsetPlayer simply counts seconds (Martin Michlmayr)
+	- TimeOffsetPlayer with full madplay support
+	- added partial xmp and play (sox) support
+
+2003-08-17  Ulf Betlehem  <flu@iki.fi>
+
+	* po/hu.po:
+	- new file (Gergely Nagy)
+	
+	* po/pl.po:
+	- new file (Perry)
+	- fixed help text not showing
+
+	* po/da.po:
+	- new file (Christian Storgaard)
+	- specified charset/encoding
+
+2003-05-13  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay:
+	- display "Adding tagged files" instead of a separate message for each file (Martin Michlmayr)
+	- avoid error-messages when interrupting cplay when started via xargs (Moshe Zadka)
+
+2003-04-13  Ulf Betlehem  <flu@iki.fi>
+
+	*** 1.47 released ***
+
+	* README:
+	- mp3info and ogginfo modules are both required
+
+	* TODO: *** empty log message ***
+
+	* cplay.1:
+	- mention help window
+	- shell command and positional parameters
+	- document control_fifo in FILES section
+	- BUGS section
+
+2003-04-11  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay(1.47rc4):
+	- removed "quit silently" command-line option (use Q instead)
+	- fixed missing ": " for isearch-prompt
+	- always add absolute paths to playlist (args and stdin)
+
+2003-04-10  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay(1.47rc3):
+	- uses glob.glob() instead of fnmatch.filter()
+
+2003-04-08  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay(1.47rc2):
+	- bugfix
+
+	* cplay(1.47rc1):
+	- status and title now use viewpoints (l)
+	- hide cursor after shell command
+	- help window updates
+
+2003-04-07  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay(1.47pre5):
+	- '!' shell command with positional args
+	- TAB completion
+	- kill word/line with C-w/C-u
+	- invert tags command 'i'
+	- removed hide partial pathnames feature
+	- renamed 'X' from [manual] to [stop]
+	- bookmarks
+	- fixed .. -> ../
+	- actually chdir in filelist
+	- fixed seek/stop/pause crash
+	- minor code cleanup
+
+2003-03-02  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay(1.47pre4):
+	- X toggles manual/automatic playlist advancement  (Väinö Järvelä)
+	- C-s C-s now remembers previous isearch string
+	- minor code cleanup here and there
+	- absolute seeking with C-a and ^ for bof, C-e and $ for eof
+	- HelpWindow includes "Undocumented commands"
+	- seeking now yield similar results when stopped and paused
+	- fixed byteorder issues with mixer on different architectures?
+
+2003-02-09  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay(1.47pre3):
+	- The "Quit? (y/N)" prompt no longer requires Enter.
+	- The number of dirs to hide can be adjusted with < and > for the
+	  pathname viewpoint. However, this might still change.
+	- Sorting is now done according to viewpoint, which means that 'S'
+	  no longer toggles sorting methods.
+	- Minor help window updates.
+
+2003-01-30  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay(1.47pre2):
+	- command line option to quit silently without confirmation
+	- isearch speedup (suggested by Eric Max Francis)
+	- viewpoint speedup
+
+2003-01-25  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay(1.47pre1):
+	- added os.path.exists check to get_tag()
+
+2002-12-16  Ulf Betlehem  <flu@iki.fi>
+
+	* lircrc:
+	- new file (Pugo)
+
+	* cplay:
+	- documented @ command
+	- get_tag improvement (Martin Michlmayr)
+
+	* cplay.1:
+	- combined v and V options into one.
+
+2002-12-16  Ulf Betlehem  <flu@iki.fi>
+
+	*** 1.46 released ***
+	
+	* cplay:
+	- documented @ command
+	- get_tag improvement (Martin Michlmayr)
+
+	* cplay.1:
+	- combined v and V options into one.
+
+2002-12-04  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay (1.46rc1):
+	- includes latest version of Martin's get_tag
+
+2002-11-30  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay (1.46pre9):
+	- alternative metadata support through get_tag (Martin Michlmayr)
+	- misc refactoring: TagListWindow, PlaylistEntry, etc.
+	- scrollable Help Window
+	- fixed keybinding for toggle counter mode
+	- new @ command that jumps to the active playlist entry
+	- removed V command and option, v toggles MASTER/PCM instead
+	- removed custom normpath
+
+2002-11-08  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay.1:
+	- Use minuses instead of hyphens for command line options. (Martin)
+
+2002-10-27  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay (1.46pre8)
+	- modified keymap!
+	- updated help window
+	- filelist tagging support (based on a patch by Jason M. Felice)
+	- improved status message behavior
+	- added retry if resize failed
+	- show cursor in input mode
+
+2002-10-24  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay (1.46pre7)
+	- a couple of status message changes
+	- faster delete when not in random mode
+	- rudimentary .pls playlist support
+	- improved streaming support
+	- advance playlist if player not found
+	- changed player priority order
+
+2002-10-21  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay (1.46pre6)
+	- new and improved random mode (Radu)
+
+2002-10-20  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay:
+	- refactoring
+	- list mode (l = toggle viewpoints)
+	- q = quit (y/n) and Q = Quit immediately
+	- isearch turnaround change
+	- input cursor position
+	- recursive search duplicates fix
+	- case insensitive regex marking
+	- regex marking matches viewpoint
+	- VALID_SONG regex matches basename
+	- playlist sorting by filename or pathname
+	- don't move empty list of marked entries
+	- SIGTERM -> SIGINT (again)
+	- updated mikmod switches
+
+2002-10-15  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay:
+	- pad input with space for cursor position
+
+2002-10-11  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay (1.46pre5)
+	- string.punctuation kludge for python 1.5
+	- recursive search in filelist!
+        - include 669|mtm|it in mikmod regex (Samium Gromoff)
+
+2002-08-28  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay (1.46pre4)
+	- bugfix
+
+2002-08-28  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay (1.46pre3)
+	- LIRC support via control FIFO (Pugo)
+
+2002-08-21  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay (1.46pre2)
+	- allow printable chars as input
+	- alias commands: Q for q and = for +
+	- grid bug removed from line number display
+	- keep current position after auto filelist updates
+	- quiet auto filelist updates (Martin Michlmayr)
+	- select child in filelist after a parent command
+	- parse player output only once every second
+	- PCM/MASTER volume commands show current volume
+
+	* LICENSE: new file
+
+2002-03-31  Ulf Betlehem  <flu@iki.fi>
+	
+	* cplay (1.46pre1)
+	- remember playlist filename (Patrice Neff)
+	
+2002-03-24  Ulf Betlehem  <flu@iki.fi>
+	
+	*** 1.45 released ***
+	
+2002-03-19  Ulf Betlehem  <flu@iki.fi>
+	
+	* cplay (1.45pre5):
+	- emulate insstr() for python1.5
+	- new commands m/M = move after/before
+	- new command D = delete current (Jay Felice)
+	- line numbers
+	
+2002-01-19  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay (1.45pre4):
+	- added options -v and -V to control either PCM or MASTER volume
+	- increase and decrease volume in steps of 3% (kludge)
+
+2002-01-13  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay (1.45pre3):
+	- progressbar cosmetics
+	- tilde expansion (Patrice Neff)
+	
+2001-12-27  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay (1.45pre2):
+	- added "--no-tty-control" option for madplay
+	- removed "-d oss" option from ogg123 (Han)
+	- use insstr instead of addstr to work around a classical curses-
+	  problem with writing the rightmost character without scrolling.
+
+2001-12-01  Ulf Betlehem  <flu@iki.fi>
+
+	*** 1.44 released ***
+	
+	* cplay:
+	- partial support for madplay
+	- partial support for mikmod (yason)
+	- removed sox support - unless someone needs it
+	- toggle counter mode: time done / time left
+	- seek acceleration based on song length
+	- avoid listing dot-files (Martin Michlmayr)
+	- remove ".." entry from root (Martin Michlmayr)
+	- show playlist upon startup if playing (Patrice Neff)
+	- removed TERMIOS warning with recent python versions
+	- add directories from command line (Han)
+	- fixed x-bug (Chris Liechti)
+	- changed write_playlist key from 'o' to 'w'
+	- changed goto command key from 'g' to 'o'
+	- added 'g' (home) and 'G' (end) keys
+	- added '/' and '?' keys for searching
+	- misc tweaks
+	
+	* cplay.1:
+	- update
+	
+	* README:
+	- update
+	
+2001-03-15  Ulf Betlehem  <flu@iki.fi>
+
+	*** 1.43 released ***
+	
+	* cplay:
+	- partial support for splay
+	- commandline arguments: repeat/random (Gerald Stieglbauer)
+	- volume fine tuning via +/- (Martin Michlmayr)
+	- simplified player framework
+	- mark/clear regexp
+	
+2001-01-18  Ulf Betlehem  <flu@iki.fi>
+
+	*** 1.42 released ***
+	
+	* cplay:
+	- ignore bogus gettext module
+	- correct devfs paths
+	- use seconds instead of frames
+	- shuffle speedup (Martin Persson)
+	- changed player hierarchy
+	- improved ogg123 support
+
+2000-12-08  Ulf Betlehem  <flu@iki.fi>
+
+	*** 1.41 released ***
+
+	* README: a few words about mpg123 and streaming
+	
+	* po/de.po, cplay.1: updated (Martin Michlmayr)
+
+	* po/Makefile, Makefile: use "install -c" for compatibility
+
+	* cplay:
+	  - autoplay initial playlist
+	  - is now a front-end for various audio players
+	  - ogg123 support (Martin Michlmayr)
+	  - devfs paths (Martin Michlmayr)
+	  - playlist url support (Charl P. Botha)
+	  - fixed signalling bug
+	  - minor code cleanup
+
+2000-10-19  Ulf Betlehem  <flu@iki.fi>
+
+	*** v1.40 released ***
+
+	* README: added instructions on how to change player options
+
+	* cplay: new versioning scheme
+	fixed locale setting
+	python 2.0 compatible
+	prefers standard gettext to fintl
+	delayed warnings for missing players and unknown fileformats
+	fixed hline with zero length in progressline
+	set title to xterm in cleanup
+	better support for mpg123 buffers by signalling progress groups
+
+	* README: modified usage
+
+	* Makefile: install man page
+
+	* cplay.1: man page (Martin Michlmayr)
+
+	* ChangeLog, TODO: new entry
+
+	* po/de.po: update (Martin Michlmayr)
+
+2000-09-06  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay: Python 1.6 compatible
+
+2000-08-09  Ulf Betlehem  <flu@iki.fi>
+
+	* po/de.po: new file
+
+	* po/Makefile: new Makefile
+
+	* killpgmodule.c: *** empty log message ***
+
+	* README: new README
+
+	* Makefile: new Makefile
+
+2000-07-31  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay: added i18n support by Martin Michlmayr
+	fixed locale support
+
+2000-07-25  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay:
+	added support for sox to play .wav, .au and other sound formats
+
+	* cplay: shows status in titlebar under X -- thanks Chmouel Boudjnah
+
+2000-05-23  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay: doesn't stat() cwd when idle
+
+	* cplay: supports both pyncurses and the old cursesmodule
+
+2000-04-24  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay: - restores terminal settings on exceptions
+	- global mp3 and m3u regexps
+	- new and improved keymap class
+	- removed a possible "division by zero" bug
+
+2000-03-24  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay: translate evil characters to '?'
+
+2000-02-07  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay: fixed a bug in FilelistWindow.add_dir()
+
+2000-01-20  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay:
+	- changed the player class so that one can hold down 'n' or 'p' when
+	  changing tracks without cplay crashing ;)
+
+2000-01-19  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay: Enter now plays files bypassing the playlist
+	Space adds files to playlist
+	a adds recursively
+	z toggles pause
+	x toggles stop
+	m3u lines beginning with '#' are now silently discarded
+
+1999-12-22  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay: - lot's of small changes
+
+1999-12-13  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay: handles SIGWINCH correctly
+	automatically rereads current dir when modified
+	lot's of minor changes
+
+1999-10-26  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay: Added two commands:
+	 R = random play order (keeps your playlist intact)
+	 S = sort playlist by filename
+
+	Removed a seldom used (also undocumented) command:
+	 N = previous track
+
+1999-05-10  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay: catches os.error if os.listfiles() fails.
+
+1999-02-13  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay: Added error-checking to prevent manipulating empty playlists.
+	Raised default seek speed from Pi to 4.
+
+1999-02-07  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay: Corrected a feature that caused automatic loading of playlists
+	upon entering a directory where the cursor was over a .m3u file.
+
+1999-01-29  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay:
+	Uses frames_done and frames_left instead of time_done and time_left.
+	Minor code clean-up.
+
+	* cplay: Now supports at least mpg123 v0.59o through v0.59q
+
+1999-01-19  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay: o  Is now "pure Python", which means there is no need for the
+	   killpgmodule.so anymore. Oh, joy!
+	o  mpg123 is now automatically located in the PATH if not specified absolutely.
+	o  Moved mark() to 'space' and pause_or_unpause() to 'p' and stop_or_unstop()
+	   to 'k'.
+	o  Playlists are now always saved with the extension .m3u.
+
+1998-12-11  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay: now consumes anything written on stdout
+
+1998-11-29  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay: select() now only timeouts when necessary.
+
+1998-11-20  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay: added PlaylistWindow.command_mark_all()
+
+1998-11-12  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay: SIGTERM -> SIGINT
+
+	* cplay: fixed sigchld bug
+	added help window
+
+1998-11-11  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay: random -> whrandom
+
+	* cplay: Too many changes!
+	Reorganization
+	Change of policy
+
+1998-10-29  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay: separated PLAYER and COMMAND
+	checks if the PLAYER is valid before it continues
+
+1998-10-27  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay: kludged mixed case in curses constants
+
+1998-10-12  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay: support for curses module versions with different key-case.
+
+1998-10-05  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay: changed progress bar
+
+	* killpgmodule.c: New file.
+
+1998-04-29  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay: remember bufptr of directories
+
+1998-04-20  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay: code cleanup
+
+1998-04-18  Ulf Betlehem  <flu@iki.fi>
+
+	* cplay: New file.
+
