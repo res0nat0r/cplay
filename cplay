@@ -1627,7 +1627,7 @@ def main():
 
 # ------------------------------------------
 PLAYERS = [
-    FrameOffsetPlayer("ogg123 -q -v -k %d %s", "\.ogg$"),
+    FrameOffsetPlayer("ogg123 -q -v -k %d %s", "\.(ogg|flac)$"),
     FrameOffsetPlayer("splay -f -k %d %s", "(^http://|\.mp[123]$)", 38.28),
     FrameOffsetPlayer("mpg123 -q -v -k %d %s", "(^http://|\.mp[123]$)", 38.28),
     FrameOffsetPlayer("mpg321 -q -v -k %d %s", "(^http://|\.mp[123]$)", 38.28),
